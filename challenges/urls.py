@@ -1,9 +1,9 @@
 
-from django.urls import path
-from django.urls import URLPattern
-
-from challenges import views
+from django.urls import path, URLPattern
+from . import views
 
 urlpatterns = [
-    path("january", views.index)
+    path("", views.index),
+    path("<int:month>", views.mon, name="mon"),
+    path("<str:month>", views.mon_challenge, name="month-challenge")
 ]
